@@ -22,7 +22,7 @@ export default {
       loading.value = true;
       try {
         const response = await fetch(
-          "https://data-tree-c7f5af2a0b76.herokuapp.com//data"
+          "https://data-tree-c7f5af2a0b76.herokuapp.com/data"
         );
         if (!response.ok) throw new Error("Failed to Fetch");
         const fetchedData = await response.json();
