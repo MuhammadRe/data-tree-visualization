@@ -21,7 +21,7 @@ Prerequisites
 ### Backend Setup:
 
 1. Clone the repository:
-   git clone <https://github.com/MuhammadRe/data-tree-visualization/tree/master>
+   git clone <https://github.com/MuhammadRe/data-tree-visualization/>
 
 2. Navigate to the server directory:
    cd path/to/server
