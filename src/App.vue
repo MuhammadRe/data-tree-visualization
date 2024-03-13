@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <DataFetcher msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import DataFetcher from "./components/DataFetcher.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    DataFetcher,
   },
 };
 </script>
