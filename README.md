@@ -52,4 +52,4 @@ If you want to check the app, visit this link:
 https://data-tree-c7f5af2a0b76.herokuapp.com/
 
 For source code access, use the public Github link below:
-https://github.com/MuhammadRe/data-tree-visualization/tree/master
+https://github.com/MuhammadRe/data-tree-visualization
