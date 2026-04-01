@@ -61,6 +61,57 @@ app.get("/data", async (_req, res) => {
   }
 });
 
+// Route to add a node
+app.post("/data", async (req, res) => {
+  try {
+    const { name, description, parent } = req.body;
+    if (!name) return res.status(400).json({ error: "Name is required" });
+    const database = client.db("dataMarketPlace");
+    const collection = database.collection("dataNodes");
+    const result = await collection.insertOne({
+      name,
+      description: description || "",
+      parent: parent || "",
+    });
+    res.json({ _id: result.insertedId, name, description, parent });
+  } catch (err) {
+    console.error("Error adding node:", err);
+    res.status(500).json({ error: "Error adding node" });
+  }
+});
+
+// Route to update a node
+app.put("/data/:id", async (req, res) => {
+  try {
+    const { ObjectId } = require("mongodb");
+    const { name, description } = req.body;
+    const database = client.db("dataMarketPlace");
+    const collection = database.collection("dataNodes");
+    await collection.updateOne(
+      { _id: new ObjectId(req.params.id) },
+      { $set: { name, description } }
+    );
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error updating node:", err);
+    res.status(500).json({ error: "Error updating node" });
+  }
+});
+
+// Route to delete a node
+app.delete("/data/:id", async (req, res) => {
+  try {
+    const { ObjectId } = require("mongodb");
+    const database = client.db("dataMarketPlace");
+    const collection = database.collection("dataNodes");
+    await collection.deleteOne({ _id: new ObjectId(req.params.id) });
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error deleting node:", err);
+    res.status(500).json({ error: "Error deleting node" });
+  }
+});
+
 // Serve static files using static middleware
 app.use(express.static("dist"));
 
