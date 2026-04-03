@@ -1,0 +1,22 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 40px;
+}
+.error {
+  color: red;
+  margin: 8px 0;
+}
+.loading {
+  color: #555;
+}
+.panels {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px;
+}
